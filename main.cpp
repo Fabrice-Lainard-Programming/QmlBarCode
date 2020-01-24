@@ -2,12 +2,13 @@
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
 #include "QZXing.h"
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
- QZXing::registerQMLTypes();
+    QZXing::registerQMLTypes();
     QGuiApplication app(argc, argv);
-QQuickStyle::setStyle("Material");
+    QQuickStyle::setStyle("Material");
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
